@@ -30,7 +30,7 @@ const Store = (clothes) => {
   }, [data]);
 
   return (
-    <div className="max-w-screen-xl grid grid-cols-2 md.grid-cols-3 lgl:grid-cols-4 bg-pink-100  gap-2 mx-1 ">
+    <div className="w-screen grid grid-cols-2 md.grid-cols-3 lgl:grid-cols-4 bg-pink-100  gap-2 mx-1  px-5 md:px-20">
       {prods.map((clothes) => (
         <div key={clothes._id}>
           {

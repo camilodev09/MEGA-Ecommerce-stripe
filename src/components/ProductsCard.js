@@ -23,11 +23,12 @@ const ProductsCard = ({ product }) => {
   };
 
   return (
-    <div className="group relative">
-      <div
+   <div className="bg-green-200 ">
+     <div className="group relative ">
+       <div
         onClick={handleDetails}
         className="w-full h-40 md:h-96 cursor-pointer overflow-hidden  "
-      >
+       >
         <img
           className="w-full h-full object-cover group-hover:scale-110 duration-500 rounded-md md:rounded-lg"
           src={product.image}
@@ -92,6 +93,7 @@ const ProductsCard = ({ product }) => {
         theme="dark"
       />
     </div>
+     </div> 
   );
 };
 
