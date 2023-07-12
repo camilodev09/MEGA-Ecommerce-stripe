@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import {
   GoogleAuthProvider,
+  FacebookAuthProvider,
   getAuth,
   signInWithPopup,
   signOut,
@@ -17,11 +18,34 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const auth = getAuth();
-  const provider = new GoogleAuthProvider();
-
-  const handleLogin = (e) => {
+  const googleProvider = new GoogleAuthProvider();
+  const facebookProvider = new FacebookAuthProvider();
+    //SIGN method google
+  const handleLoginWithGoogle = (e) => {
     e.preventDefault();
-    signInWithPopup(auth, provider)
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        const user = result.user;
+        dispatch(
+          addUser({
+            _id: user.uid,
+            name: user.displayName,
+            email: user.email,
+            image: user.photoURL,
+          })
+        );
+        setTimeout(() => {
+          navigate("/");
+        }, 1500);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  //SIGN method face
+  const handleLoginWithFacebook = (e) => {
+    e.preventDefault();
+    signInWithPopup(auth, facebookProvider)
       .then((result) => {
         const user = result.user;
         dispatch(
@@ -41,6 +65,7 @@ const Login = () => {
       });
   };
 
+  //SIGNOUT
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -57,7 +82,7 @@ const Login = () => {
     <div className="w-full flex flex-col items-center justify-center gap-5 md:gap-10 py-20">
       <div className="w-full flex items-center justify-center gap-2 ">
         <div
-          onClick={handleLogin}
+          onClick={handleLoginWithGoogle}
           className="pl-2 text-base  w-60  h-10 md:h-12 tracking-wide border-[1px] border-gray-400 rounded-md flex items-center justify-start gap-2   hover:border-blue-600 cursor-pointer duration-300"
         >
           <img className="w-8" src={googleLogo} alt="googleLogo" />
@@ -73,10 +98,14 @@ const Login = () => {
           </button>
         )}
       </div>
+
       <div className="w-full flex items-center justify-center gap-2">
-        <div className="pl-2 text-base w-60 h-10 md:h-12 tracking-wide border-[1px] border-gray-400 rounded-md flex items-center justify-start gap-2 hover:border-blue-600 cursor-pointer duration-300">
-          <img className="w-8" src={facebook} alt="facebook" />
-          <span className="text-sm text-gray-900"> Sign in with Facebook</span>
+        <div 
+         onClick={handleLoginWithFacebook}
+         className="pl-2 text-base w-60 h-10 md:h-12 tracking-wide border-[1px] border-gray-400 rounded-md flex items-center justify-start gap-2 hover:border-blue-600 cursor-pointer duration-300"
+         >
+           <img className="w-8" src={facebook} alt="facebook" />
+           <span className="text-sm text-gray-900"> Sign in with Facebook</span>
         </div>
 
         {userInfo && (

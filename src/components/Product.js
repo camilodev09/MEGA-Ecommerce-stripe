@@ -12,8 +12,11 @@ const Product = () => {
   const location = useLocation();
 
   useEffect(() => {
-    setDetails(location.state.item);
+    if (location.state && location.state.item) {
+      setDetails(location.state.item);
+    }
   }, [location]);
+  
   return (
     <div>
       <div className="  grid grid-cols-1 md:grid-cols-2">

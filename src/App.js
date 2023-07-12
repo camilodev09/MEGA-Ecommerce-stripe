@@ -15,6 +15,8 @@ import Product from "./components/Product";
 import Store from "./components/Store";
 import Cart from "./components/pages/Cart";
 import Login from "./components/pages/Login";
+import Contact from "./components/contacto";
+
 
 const Layout = () => {
   return (
@@ -55,6 +57,11 @@ const router = createBrowserRouter([
         path: "/store",
         element: <Store />,
         loader: productsData,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      
       },
     ],
   },

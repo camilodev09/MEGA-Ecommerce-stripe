@@ -111,10 +111,12 @@ const Carrousel = () => {
   };
 
   return (
-    <div className="">
-      <h1 className="text-sm md:text-3xl bg-black text-white py-5  w-30 md:w-100 text-center rounded-sm  md:p-7 ">
-        It´s time to buy. Let´s go to the store!
+    <div className="w-full h-full  bg-[#030712] pb-20">
+       <div className="justify-center items-center  h-[200px] md:h-[300px] w-full bg-[#030712] flex">
+         <h1 className="text-2xl md:text-4xl xl:text-6xl  text-white py-5  text-center rounded-sm  md:p-7 ">
+          It´s time to buy. Let´s go to the store!
       </h1>
+       </div>
       <Slider {...settings}>
         <div className=" button-10">
           <img

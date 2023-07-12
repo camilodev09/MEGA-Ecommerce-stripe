@@ -3,7 +3,7 @@ import ProductsCard from "./ProductsCard";
 
 const Products = ({ products }) => {
   return (
-    <div className="py-10 ">
+    <div className="py-10 px-5 md:px-20 justify-center items-center  bg-gray-100">
       <div className="flex flex-col items-center gap-1 md:pt-6">
         <h1 className="text-xs md:text-2xl bg-black text-white py-2  w-30 md:w-100 text-center rounded-md p-3 md:p-5">
           Do you know how to choose your correct size?
@@ -22,7 +22,7 @@ const Products = ({ products }) => {
       </div>
       {/* =================== Products Start here ================= */}
 
-      <div className=" max-w-screen-xl grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-8 py-8 md:py-10 p-2  bg-slate-100 ">
+      <div className=" w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-8 py-8 md:py-10 p-2  bg-slate-100  justify-center items-center">
         {products
 
           .filter(

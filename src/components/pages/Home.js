@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "../../components/Banner";
 import Products from "../../components/Products";
 import Carrousel from "../../components/Carrousel";
+import Contact from "../contacto";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -18,6 +19,7 @@ const Home = () => {
       <Banner />
       <Products products={products} />
       <Carrousel />
+      <Contact />
     </div>
   );
 };
