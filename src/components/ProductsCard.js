@@ -23,7 +23,7 @@ const ProductsCard = ({ product }) => {
   };
 
   return (
-   <div className="bg-green-200 ">
+   <div className="bg-gray-200 ">
      <div className="group relative ">
        <div
         onClick={handleDetails}
