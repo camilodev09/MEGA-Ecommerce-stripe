@@ -17,7 +17,7 @@ const Footer = () => {
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-4 gap-2 lgl:gap-8 p-3">
         <div className="flex flex-col gap-7">
           <img className="w-32" src={megaLight} alt="logoDark" />
-          <p className="text-white text-sm tracking-wide">© www.ally.com</p>
+          <p className="text-white text-sm tracking-wide">© www.creazone.pe</p>
           <img className="w-56" src={paymentLogo} alt="paymentLogo" />
           <div className="flex gap-5 text-lg text-gray-400">
             <FaYoutube className="hover:text-white duration-300 cursor-pointer" />
@@ -71,10 +71,10 @@ const Footer = () => {
             locate us
           </h2>
           <div className="text-xs md:text-base flex flex-col gap-1 md:gap-3">
-            <p>From:Peru-Lima</p>
+            <p>From:Perú-Lima</p>
             <p>Mobile: 00968 97859628</p>
             <p>Phone: 00968 24769821</p>
-            <p>e-mail: market@ally.com</p>
+            <p>e-mail: mega@contacto.com</p>
           </div>
         </div>
       </div>
